@@ -2,7 +2,7 @@ import { createAdminClient } from '@/lib/supabase/server'
 import { PLAN_PRICES, type Plan } from '@/types'
 
 export default async function AdminPage() {
-  const supabase = createAdminClient()
+  const supabase = await createAdminClient()
 
   const [
     { count: totalClients },
@@ -115,3 +115,4 @@ export default async function AdminPage() {
     </div>
   )
 }
+

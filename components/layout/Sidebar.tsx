@@ -96,3 +96,4 @@ export default function Sidebar({ role, name, unread = 0 }: Props) {
     </aside>
   )
 }
+

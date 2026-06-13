@@ -14,7 +14,7 @@ export default function RegisterPage() {
   async function handleSubmit(e: React.FormEvent) {
     e.preventDefault()
     setLoading(true); setError('')
-    const supabase = createClient()
+    const supabase = await createClient()
     const { error: authErr } = await supabase.auth.signUp({
       email: email.trim().toLowerCase(),
       password,
@@ -59,3 +59,4 @@ export default function RegisterPage() {
     </div>
   )
 }
+

@@ -25,7 +25,7 @@ export async function POST(req: NextRequest) {
     return NextResponse.json({ error: 'Invalid signature' }, { status: 400 })
   }
 
-  const supabase = createAdminClient()
+  const supabase = await createAdminClient()
 
   if (event.type === 'checkout.session.completed') {
     const session = event.data.object
@@ -58,3 +58,4 @@ export async function POST(req: NextRequest) {
 
   return NextResponse.json({ received: true })
 }
+

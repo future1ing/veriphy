@@ -24,7 +24,7 @@ export default function LoginPage() {
   async function handleSubmit(e: React.FormEvent) {
     e.preventDefault()
     setLoading(true); setError('')
-    const supabase = createClient()
+    const supabase = await createClient()
     const { data, error: authErr } = await supabase.auth.signInWithPassword({
       email: email.trim().toLowerCase(), password,
     })
@@ -95,3 +95,4 @@ export default function LoginPage() {
     </div>
   )
 }
+

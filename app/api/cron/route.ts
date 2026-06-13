@@ -10,7 +10,7 @@ export async function GET(req: NextRequest) {
     return NextResponse.json({ error: 'Unauthorized' }, { status: 401 })
   }
 
-  const supabase = createAdminClient()
+  const supabase = await createAdminClient()
   const startedAt = new Date().toISOString()
 
   try {
@@ -31,3 +31,4 @@ export async function GET(req: NextRequest) {
     return NextResponse.json({ error: String(err) }, { status: 500 })
   }
 }
+

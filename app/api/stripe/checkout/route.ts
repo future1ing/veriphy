@@ -13,7 +13,7 @@ export async function POST(req: NextRequest) {
     return NextResponse.json({ error: 'Stripe not configured yet' }, { status: 503 })
   }
 
-  const supabase = createClient()
+  const supabase = await createClient()
   const { data: { user } } = await supabase.auth.getUser()
   if (!user) return NextResponse.json({ error: 'Unauthorized' }, { status: 401 })
 
@@ -50,3 +50,4 @@ export async function POST(req: NextRequest) {
 
   return NextResponse.json({ url: session.url })
 }
+

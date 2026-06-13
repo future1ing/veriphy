@@ -74,3 +74,4 @@ export interface Snapshot {
   total_records: number
   is_current: boolean
 }
+
