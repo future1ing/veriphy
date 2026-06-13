@@ -116,7 +116,7 @@ export default async function DashboardPage() {
               display: 'grid', gridTemplateColumns: '4px 1fr auto', gap: 11, alignItems: 'start',
               padding: '12px 14px', borderRadius: 7, marginBottom: 8,
               background: a.is_read ? 'var(--sf)' : 'var(--sf2)',
-              borderLeft: `3px solid ${sev.color}`, border: `1px solid var(--bd)`, borderLeft: `3px solid ${sev.color}`,
+              borderLeft: `3px solid ${sev.color}`,
             }}>
               <div/>
               <div>
